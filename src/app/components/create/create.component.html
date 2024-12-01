@@ -1,0 +1,14 @@
+<div class="container d-flex flex-column justify-content-center text-center min-vh-100">
+    <div class="row">
+      <div class="col-12">
+        <h3>Register Form</h3>
+        <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+          <input formControlName="userName" placeholder="Username" /><br><br>
+          <input formControlName="emailId" type="email" placeholder="Email ID" /><br><br>
+          <strong class="text-danger" *ngIf="registerForm.controls['emailId'].hasError('emailTaken')">Email is already taken.</strong><br>
+          <input formControlName="password" type="password" placeholder="Password" type="password" /><br><br>
+          <button btnStyle class="btn btn-secondary" type="submit" [disabled]="!registerForm.valid">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>

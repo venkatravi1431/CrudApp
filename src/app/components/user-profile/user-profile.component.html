@@ -1,0 +1,13 @@
+<div class="d-flex flex-column justify-content-center align-items-center min-vh-100" *ngIf="user$ | async as user; else loadingTemplate">
+  <img [src]="user.data.avatar" alt="User Avatar" />
+  <h2>{{ user.data.first_name }} {{ user.data.last_name }}</h2>
+  <p>Email: {{ user.data.email }}</p>
+  <p>Customer ID: {{user.data.id}}</p>
+</div>
+
+<ng-template #loadingTemplate>
+  <p class="d-flex flex-column justify-content-center align-items-center min-vh-100">
+    LOADING...
+  </p>
+</ng-template>
+  
